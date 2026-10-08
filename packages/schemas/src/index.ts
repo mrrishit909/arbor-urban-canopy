@@ -1,0 +1,12 @@
+export type SiteType = "sidewalk pit" | "plaza" | "courtyard" | "park";
+export type BlockKind = "residential" | "commercial" | "civic" | "school" | "park";
+export type Block = { id: string; i: number; j: number; x0: number; y0: number; x1: number; y1: number; kind: BlockKind; equity: number };
+export type Building = { id: string; block: string; x0: number; y0: number; x1: number; y1: number; h: number };
+export type Site = { id: string; x: number; y: number; type: SiteType; maxCrownM: number; block: string; priority: number; constraints: string[]; equity: number };
+export type Tree = { id: string; species: string; plantedYear: number; x: number; y: number; siteId: string; healthScore: number; maintenance: "ok" | "prune due" | "water" | "remove" };
+export type Planting = { siteId: string; species: string; plantYear: number };
+export type Archetype = "Round" | "Columnar" | "Spreading" | "Conifer";
+export type Species = { id: string; name: string; latin: string; archetype: Archetype; rMaxM: number; hMaxM: number; growth: number; dbhMaxCm: number; evergreen: boolean; summerTransmit: number; plantCostUsd: number; stormwater: number; biodiversity: number; lifespanYears: number; flowerMonth?: number; note: string };
+export type Scenario = { id?: string; name: string; horizonYear: number; budgetUsd: number; plantings: Planting[] };
+export type Metrics = { canopyPct: number; sidewalkShadePct: number; meanFeelC: number; hotSharePct: number; stormwaterM3: number; carbonKg: number; biodiversity: number; trees: number; maintenanceUsdYr: number; plantingUsd: number };
+export type Weights = { heat: number; stormwater: number; biodiversity: number; equity: number };

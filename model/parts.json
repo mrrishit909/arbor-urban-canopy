@@ -1,0 +1,14 @@
+{
+  "_doc": "Asset contract for the ARBOR district and tree kit. Blender is Z-up, the GLB is Y-up (glTF z = -Blender y). 1 unit is 1 metre. City modules are unit-scale and instanced by the browser (buildings are 1 x 1 x 1 blocks the browser scales). Tree meshes are normalised so the browser can scale them to any species and age: a trunk goes from y = 0 to y = 1 with its base radius 0.5 (scaled by dbh), a crown is a lumpy ellipsoid of unit radius centred on its own origin (the browser scales it to the crown radius and height and lifts it onto the trunk). Each archetype ships three authored growth stages. Specimens are a branch with leaves and a single veined leaf for the species explorer. Proxy_District is the analysis volume and is never drawn.",
+  "district": {"width": 400, "depth": 240},
+  "archetypes": ["Round", "Columnar", "Spreading", "Conifer"],
+  "stages": 3,
+  "modules": {
+    "Road_Tile": {"size": [20, 0.2, 20]}, "Sidewalk_Tile": {"size": [5, 0.25, 5]}, "Planting_Cutout": {"size": [1.4, 0.3, 1.4]}, "Lawn_Tile": {"size": [10, 0.15, 10]},
+    "Building_Block_A": {"size": [1, 1, 1]}, "Building_Block_B": {"size": [1, 1, 1]}, "Building_Block_C": {"size": [1, 1, 1]},
+    "Lamp_Post": {"height": 6}, "Bench": {"length": 1.8}, "Hydrant": {"height": 0.8}, "Bus_Shelter": {"length": 4}
+  },
+  "specimens": ["Specimen_Branch_Round", "Specimen_Branch_Columnar", "Specimen_Branch_Spreading", "Specimen_Branch_Conifer", "Specimen_Leaf_Round", "Specimen_Leaf_Columnar", "Specimen_Leaf_Spreading", "Specimen_Leaf_Conifer"],
+  "proxy": ["Proxy_District"],
+  "budget": {"tris": 40000, "bytes": 500000}
+}
